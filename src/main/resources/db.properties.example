@@ -1,0 +1,6 @@
+user=seu_usuario
+password=sua_senha
+dburl=jdbc:mysql://localhost:3306/coursejdbc
+useSSL=false
+
+// renomeia a pasta apenas para db.properties ou muda o caminho na classe de conexão com o banco de dados ( DB )
