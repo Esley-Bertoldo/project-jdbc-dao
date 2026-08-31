@@ -1,37 +1,37 @@
 # Project DAO JDBC
 
-Sistema de gerenciamento de vendedores e departamentos desenvolvido em **Java**, utilizando **JDBC** para integração com banco de dados **MySQL** e o padrão de projeto **DAO (Data Access Object)**.
+A seller and department management system developed in **Java**, using **JDBC** for **MySQL** database integration and the **DAO (Data Access Object)** design pattern.
 
-## 📌 Sobre o Projeto
+## 📌 About the Project
 
-O **Project DAO JDBC** é uma aplicação desenvolvida para praticar a integração entre uma aplicação Java e um banco de dados relacional utilizando JDBC.
+**Project DAO JDBC** is an application developed to practice the integration between a Java application and a relational database using JDBC.
 
-O sistema trabalha com **vendedores (Seller)** e **departamentos (Department)**, permitindo realizar operações de persistência como cadastro, consulta, atualização e exclusão de registros.
+The system works with **sellers (Seller)** and **departments (Department)**, allowing persistence operations such as creating, retrieving, updating, and deleting records.
 
-O projeto também demonstra a utilização do padrão **DAO**, separando as regras de acesso ao banco de dados das entidades da aplicação.
+The project also demonstrates the use of the **DAO pattern**, separating database access logic from the application's entities.
 
-## 🚀 Funcionalidades
+## 🚀 Features
 
-* Cadastro de vendedores
-* Cadastro de departamentos
-* Busca de vendedor por ID
-* Listagem de vendedores
-* Busca de vendedores por departamento
-* Atualização de vendedores
-* Exclusão de vendedores
-* Busca de departamento por ID
-* Listagem de departamentos
-* Atualização de departamentos
-* Exclusão de departamentos
-* Integração com banco de dados MySQL
-* Tratamento de exceções relacionadas ao banco de dados
-* Relacionamento entre vendedores e departamentos
+* Seller registration
+* Department registration
+* Find seller by ID
+* List all sellers
+* Find sellers by department
+* Update sellers
+* Delete sellers
+* Find department by ID
+* List all departments
+* Update departments
+* Delete departments
+* MySQL database integration
+* Database exception handling
+* Relationship between sellers and departments
 
 ---
 
-# 🏗️ Arquitetura
+# 🏗️ Architecture
 
-O projeto utiliza uma estrutura baseada no padrão **DAO**, separando as responsabilidades entre entidades, interfaces DAO, implementações JDBC e conexão com o banco de dados.
+The project follows a structure based on the **DAO pattern**, separating responsibilities between entities, DAO interfaces, JDBC implementations, and database connection management.
 
 ```text
 src/
@@ -63,9 +63,11 @@ src/
         └── db.properties
 ```
 
-## 🔄 Padrão DAO
+---
 
-O padrão **DAO (Data Access Object)** é utilizado para separar o acesso ao banco de dados das entidades da aplicação.
+# 🔄 DAO Pattern
+
+The **DAO (Data Access Object)** pattern is used to separate database access from the application's entities.
 
 ```text
 Application
@@ -83,15 +85,15 @@ DAO JDBC
    MySQL
 ```
 
-Essa abordagem facilita a organização e manutenção do código, além de permitir que a lógica de persistência fique concentrada nas classes DAO.
+This approach improves code organization and maintainability while keeping persistence logic centralized in the DAO classes.
 
 ---
 
-# 🧩 Entidades
+# 🧩 Entities
 
 ## Seller
 
-Representa um vendedor cadastrado no sistema.
+Represents a seller registered in the system.
 
 ```text
 id: Integer
@@ -102,18 +104,18 @@ baseSalary: Double
 department: Department
 ```
 
-Um vendedor pertence a um departamento.
+A seller belongs to a department.
 
 ## Department
 
-Representa um departamento da empresa.
+Represents a department within the company.
 
 ```text
 id: Integer
 name: String
 ```
 
-### Relacionamento
+### Relationship
 
 ```text
 Department
@@ -124,20 +126,20 @@ Department
               Seller
 ```
 
-Um departamento pode possuir vários vendedores, enquanto cada vendedor pertence a um departamento.
+A department can have multiple sellers, while each seller belongs to one department.
 
 ---
 
-# 🗄️ Persistência de Dados
+# 🗄️ Data Persistence
 
-O acesso ao banco de dados é realizado utilizando **JDBC (Java Database Connectivity)**.
+Database access is performed using **JDBC (Java Database Connectivity)**.
 
-As operações de persistência são implementadas nas classes:
+Persistence operations are implemented in the following classes:
 
 * `SellerDaoJDBC`
 * `DepartmentDaoJDBC`
 
-Entre as operações disponíveis estão:
+The available operations include:
 
 ```text
 INSERT
@@ -146,18 +148,18 @@ UPDATE
 DELETE
 ```
 
-As consultas também utilizam `PreparedStatement`, contribuindo para uma comunicação mais segura e organizada com o banco de dados.
+The queries also use `PreparedStatement`, contributing to safer and more organized communication with the database.
 
 ---
 
-# 🛠️ Tecnologias Utilizadas
+# 🛠️ Technologies Used
 
 * **Java**
 * **JDBC**
 * **MySQL**
 * **Maven**
 * **SQL**
-* **POO (Programação Orientada a Objetos)**
+* **Object-Oriented Programming (OOP)**
 * **DAO Pattern**
 * **Generics**
 * **Collections Framework**
@@ -165,9 +167,9 @@ As consultas também utilizam `PreparedStatement`, contribuindo para uma comunic
 
 ---
 
-# 📦 Dependência Principal
+# 📦 Main Dependency
 
-O projeto utiliza o driver JDBC oficial do MySQL através do Maven:
+The project uses the official MySQL JDBC driver through Maven:
 
 ```xml
 <dependency>
@@ -179,59 +181,59 @@ O projeto utiliza o driver JDBC oficial do MySQL através do Maven:
 
 ---
 
-# ⚙️ Como Executar
+# ⚙️ How to Run
 
-## Pré-requisitos
+## Prerequisites
 
-Antes de executar o projeto, tenha instalado:
+Before running the project, make sure you have the following installed:
 
 * Java
 * Maven
 * MySQL
-* IntelliJ IDEA, Eclipse ou VS Code
+* IntelliJ IDEA, Eclipse, or VS Code
 
-## 1. Clone o repositório
+## 1. Clone the repository
 
 ```bash
 git clone https://github.com/Esley-Bertoldo/Project-Dao-Jdbc.git
 ```
 
-Entre na pasta:
+Enter the project directory:
 
 ```bash
 cd Project-Dao-Jdbc
 ```
 
-## 2. Configure o banco de dados
+## 2. Configure the database
 
-Crie o banco de dados MySQL utilizado pelo projeto:
+Create the MySQL database used by the project:
 
 ```sql
 CREATE DATABASE coursejdbc;
 ```
 
-Configure as credenciais no arquivo:
+Configure your database credentials in:
 
 ```text
 src/main/resources/db.properties
 ```
 
-Exemplo:
+Example:
 
 ```properties
-user=seu_usuario
-password=sua_senha
+user=your_username
+password=your_password
 dburl=jdbc:mysql://localhost:3306/coursejdbc
 useSSL=false
 ```
 
-> **Importante:** não publique senhas reais no GitHub. Utilize valores locais ou variáveis de ambiente.
+> **Important:** Never publish real passwords or sensitive credentials on GitHub. Use local values or environment variables.
 
-## 3. Execute o projeto
+## 3. Run the project
 
-Como o projeto utiliza Maven, pode ser executado pela IDE ou através do Maven.
+Since the project uses Maven, it can be run through an IDE or using Maven.
 
-Na IDE, execute:
+In your IDE, run:
 
 ```text
 src/main/java/application/Program.java
@@ -239,27 +241,27 @@ src/main/java/application/Program.java
 
 ---
 
-# 📚 Conceitos Praticados
+# 📚 Concepts Practiced
 
-Este projeto foi desenvolvido com foco nos seguintes conceitos:
+This project was developed with a focus on the following concepts:
 
-### Programação Orientada a Objetos
+### Object-Oriented Programming
 
-* Classes e objetos
-* Encapsulamento
-* Associação entre objetos
+* Classes and objects
+* Encapsulation
+* Object association
 * Interfaces
-* Sobrescrita de métodos
-* `equals()` e `hashCode()`
+* Method overriding
+* `equals()` and `hashCode()`
 * `toString()`
 
-### Banco de Dados
+### Database
 
 * SQL
 * CRUD
-* Chaves primárias
-* Chaves estrangeiras
-* Relacionamentos
+* Primary keys
+* Foreign keys
+* Relationships
 * JOIN
 * PreparedStatement
 * ResultSet
@@ -270,10 +272,10 @@ Este projeto foi desenvolvido com foco nos seguintes conceitos:
 * `PreparedStatement`
 * `ResultSet`
 * `SQLException`
-* Gerenciamento de recursos
-* Integração com MySQL
+* Resource management
+* MySQL integration
 
-### Padrões e Estruturas
+### Patterns and Structures
 
 * DAO Pattern
 * Factory Pattern
@@ -283,34 +285,34 @@ Este projeto foi desenvolvido com foco nos seguintes conceitos:
 
 ---
 
-# 📁 Principais Classes
+# 📁 Main Classes
 
-| Classe                 | Responsabilidade                           |
-| ---------------------- | ------------------------------------------ |
-| `Program`              | Ponto de entrada da aplicação              |
-| `DB`                   | Gerenciamento da conexão com o banco       |
-| `DaoFactory`           | Criação das implementações DAO             |
-| `SellerDao`            | Interface de acesso aos vendedores         |
-| `SellerDaoJDBC`        | Implementação JDBC do DAO de vendedores    |
-| `DepartmentDao`        | Interface de acesso aos departamentos      |
-| `DepartmentDaoJDBC`    | Implementação JDBC do DAO de departamentos |
-| `Seller`               | Entidade vendedor                          |
-| `Department`           | Entidade departamento                      |
-| `DbException`          | Exceções relacionadas ao banco             |
-| `DbIntegrityException` | Exceções de integridade do banco           |
-
----
-
-# 🎯 Objetivo
-
-O projeto tem como objetivo consolidar conhecimentos de **Java, JDBC, SQL e Programação Orientada a Objetos**, aplicando uma arquitetura organizada para comunicação entre uma aplicação Java e um banco de dados MySQL.
+| **Class**              | **Responsibility**                        |
+| ---------------------- | ----------------------------------------- |
+| `Program`              | Application entry point                   |
+| `DB`                   | Database connection management            |
+| `DaoFactory`           | Creates DAO implementations               |
+| `SellerDao`            | Seller data access interface              |
+| `SellerDaoJDBC`        | JDBC implementation of the seller DAO     |
+| `DepartmentDao`        | Department data access interface          |
+| `DepartmentDaoJDBC`    | JDBC implementation of the department DAO |
+| `Seller`               | Seller entity                             |
+| `Department`           | Department entity                         |
+| `DbException`          | Database-related exceptions               |
+| `DbIntegrityException` | Database integrity exceptions             |
 
 ---
 
-# 👨‍💻 Autor
+# 🎯 Objective
+
+The project's goal is to consolidate knowledge of **Java, JDBC, SQL, and Object-Oriented Programming**, applying an organized architecture for communication between a Java application and a MySQL database.
+
+---
+
+# 👨‍💻 Author
 
 **Esley Bertoldo**
 
-GitHub: [Esley-Bertoldo](https://github.com/Esley-Bertoldo)
+GitHub: **Esley-Bertoldo**
 
-LinkedIn: [Esley Bertoldo](https://www.linkedin.com/in/esley-bertoldo)
+LinkedIn: **Esley Bertoldo**
