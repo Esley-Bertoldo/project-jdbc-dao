@@ -3,6 +3,8 @@ package application;
 import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
 import model.dao.SellerDao;
+import model.entities.Seller;
+
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -126,6 +128,15 @@ public class Program {
                         }
                     }
                 }
+                break;
+
+            case 2:
+
+                System.out.println("\n Lista de Todos os Vendedores: \n");
+
+                for (Seller s : seller.findAll())
+                System.out.println(s);
+
                 break;
 
                 // case -> voltar ou opção inválida

@@ -165,7 +165,7 @@ public class SellerDaoJDBC implements SellerDao {
                     "SELECT seller.*,department.Name as DepName\n" +
                             "FROM seller INNER JOIN department\n" +
                             "ON seller.DepartmentId = department.Id\n" +
-                            "ORDER BY Name");
+                            "ORDER BY id");
 
             rs = st.executeQuery();
 
@@ -183,9 +183,8 @@ public class SellerDaoJDBC implements SellerDao {
 
                 Seller obj = instantiateSeller(rs,dep);
                 list.add(obj);
-                return list;
             }
-            return null;
+            return list;
         } catch (SQLException e){
             throw new DbException(e.getMessage());
         }
