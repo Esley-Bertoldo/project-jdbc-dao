@@ -166,6 +166,41 @@ public class Program {
 
         switch (opcao) {
 
+            case 1:
+                boolean repetirbusca = true;
+
+                while (repetirbusca) {
+
+                    System.out.println("Digite o id do Departamento: ");
+                    int id = sc.nextInt();
+
+                    var departamentoencontrado = dept.findById(id);
+                    if (departamentoencontrado == null) {
+                        System.out.println("Departamento inexistente!");
+                    } else {
+                        System.out.println("Departamento encontrado! \n");
+                        System.out.println(departamentoencontrado + "\n");
+                    }
+
+                    boolean opcaovalida = true;
+
+                    while (opcaovalida) {
+
+                        System.out.println("Deseja fazer outra busca? [ S / N ]");
+                        char opSN = sc.next().charAt(0);
+                        if (opSN == 'S' || opSN == 's') {
+                            opcaovalida = false;
+                        } else if (opSN == 'N' || opSN == 'n') {
+                            System.out.println("Voltando...");
+                            opcaovalida = false;
+                            repetirbusca =  false;
+                        } else {
+                            System.out.println("Opção inválida, tente novamente.");
+                        }
+                    }
+                }
+                break;
+
             // case -> voltar ou opção inválida
             case 6:
                 System.out.println("Voltando...");

@@ -95,6 +95,6 @@ public class Seller implements Serializable {
                 ", email= " + email  +
                 ", birthDate= " + birthDate +
                 ", baseSalary= " + baseSalary
-                + department.toString() + "\n";
+                + " " + department.toString() + "\n";
     }
 }
